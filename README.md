@@ -16,12 +16,13 @@ An iOS app that uses **Bluetooth Low Energy (BLE)** to help you locate your vehi
 
 ## Requirements
 
-| Requirement | Version |
+| Requirement | Version / Details |
 |---|---|
 | iOS | 16.0+ |
 | Xcode | 15.0+ |
 | Swift | 5.9+ |
-| Hardware | iPhone with Bluetooth 4.0+ |
+| iPhone | Bluetooth 4.0+ (BLE capable) |
+| BLE Device | ESP32 (recommended), or any BLE GATT server that can advertise the service UUID and send JSON over a notify characteristic — e.g. ESP32-S3, nRF52840, Arduino Nano 33 BLE |
 
 ---
 
