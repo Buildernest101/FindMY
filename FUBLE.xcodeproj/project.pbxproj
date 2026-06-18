@@ -24,9 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AB8EAB702ED2153200B425A5 /* FindMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMY.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB8EAB802ED2153500B425A5 /* FindMYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB8EAB8A2ED2153500B425A5 /* FindMYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB8EAB702ED2153200B425A5 /* FindMy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB8EAB802ED2153500B425A5 /* FindMyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB8EAB8A2ED2153500B425A5 /* FindMyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -85,9 +85,9 @@
 		AB8EAB712ED2153200B425A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB8EAB702ED2153200B425A5 /* FindMY.app */,
-				AB8EAB802ED2153500B425A5 /* FindMYTests.xctest */,
-				AB8EAB8A2ED2153500B425A5 /* FindMYUITests.xctest */,
+				AB8EAB702ED2153200B425A5 /* FindMy.app */,
+				AB8EAB802ED2153500B425A5 /* FindMyTests.xctest */,
+				AB8EAB8A2ED2153500B425A5 /* FindMyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB8EAB6F2ED2153200B425A5 /* FindMY */ = {
+		AB8EAB6F2ED2153200B425A5 /* FindMy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB8EAB942ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMY" */;
+			buildConfigurationList = AB8EAB942ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMy" */;
 			buildPhases = (
 				AB8EAB6C2ED2153200B425A5 /* Sources */,
 				AB8EAB6D2ED2153200B425A5 /* Frameworks */,
@@ -110,16 +110,16 @@
 			fileSystemSynchronizedGroups = (
 				AB8EAB722ED2153200B425A5 /* FindMY */,
 			);
-			name = FindMY;
+			name = FindMy;
 			packageProductDependencies = (
 			);
 			productName = FindMY;
-			productReference = AB8EAB702ED2153200B425A5 /* FindMY.app */;
+			productReference = AB8EAB702ED2153200B425A5 /* FindMy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB8EAB7F2ED2153500B425A5 /* FindMYTests */ = {
+		AB8EAB7F2ED2153500B425A5 /* FindMyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB8EAB972ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMYTests" */;
+			buildConfigurationList = AB8EAB972ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMyTests" */;
 			buildPhases = (
 				AB8EAB7C2ED2153500B425A5 /* Sources */,
 				AB8EAB7D2ED2153500B425A5 /* Frameworks */,
@@ -133,16 +133,16 @@
 			fileSystemSynchronizedGroups = (
 				AB8EAB832ED2153500B425A5 /* FindMYTests */,
 			);
-			name = FindMYTests;
+			name = FindMyTests;
 			packageProductDependencies = (
 			);
 			productName = FindMYTests;
-			productReference = AB8EAB802ED2153500B425A5 /* FindMYTests.xctest */;
+			productReference = AB8EAB802ED2153500B425A5 /* FindMyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AB8EAB892ED2153500B425A5 /* FindMYUITests */ = {
+		AB8EAB892ED2153500B425A5 /* FindMyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB8EAB9A2ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMYUITests" */;
+			buildConfigurationList = AB8EAB9A2ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMyUITests" */;
 			buildPhases = (
 				AB8EAB862ED2153500B425A5 /* Sources */,
 				AB8EAB872ED2153500B425A5 /* Frameworks */,
@@ -156,11 +156,11 @@
 			fileSystemSynchronizedGroups = (
 				AB8EAB8D2ED2153500B425A5 /* FindMYUITests */,
 			);
-			name = FindMYUITests;
+			name = FindMyUITests;
 			packageProductDependencies = (
 			);
 			productName = FindMYUITests;
-			productReference = AB8EAB8A2ED2153500B425A5 /* FindMYUITests.xctest */;
+			productReference = AB8EAB8A2ED2153500B425A5 /* FindMyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AB8EAB6B2ED2153200B425A5 /* Build configuration list for PBXProject "FindMY" */;
+			buildConfigurationList = AB8EAB6B2ED2153200B425A5 /* Build configuration list for PBXProject "FindMy" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB8EAB6F2ED2153200B425A5 /* FindMY */,
-				AB8EAB7F2ED2153500B425A5 /* FindMYTests */,
-				AB8EAB892ED2153500B425A5 /* FindMYUITests */,
+				AB8EAB6F2ED2153200B425A5 /* FindMy */,
+				AB8EAB7F2ED2153500B425A5 /* FindMyTests */,
+				AB8EAB892ED2153500B425A5 /* FindMyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		AB8EAB822ED2153500B425A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB8EAB6F2ED2153200B425A5 /* FindMY */;
+			target = AB8EAB6F2ED2153200B425A5 /* FindMy */;
 			targetProxy = AB8EAB812ED2153500B425A5 /* PBXContainerItemProxy */;
 		};
 		AB8EAB8C2ED2153500B425A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB8EAB6F2ED2153200B425A5 /* FindMY */;
+			target = AB8EAB6F2ED2153200B425A5 /* FindMy */;
 			targetProxy = AB8EAB8B2ED2153500B425A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -396,8 +396,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FindMY/Preview Content\"";
+				DEVELOPMENT_TEAM = TG6246SUQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to find nearvy ESP32 beacons";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "FindMY uses your location to remember where your scooter was when it was last seen.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "FindMY uses your location to remember where your scooter was parked.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,8 +428,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FindMY/Preview Content\"";
+				DEVELOPMENT_TEAM = TG6246SUQ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to find nearvy ESP32 beacons";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "FindMY uses your location to remember where your scooter was when it was last seen.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "FindMY uses your location to remember where your scooter was parked.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,7 +466,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindMY";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindMy";
 			};
 			name = Debug;
 		};
@@ -476,7 +484,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindMY";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindMy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FindMy";
 			};
 			name = Release;
 		};
@@ -515,7 +523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB8EAB6B2ED2153200B425A5 /* Build configuration list for PBXProject "FindMY" */ = {
+		AB8EAB6B2ED2153200B425A5 /* Build configuration list for PBXProject "FindMy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB8EAB922ED2153500B425A5 /* Debug */,
@@ -524,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB8EAB942ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMY" */ = {
+		AB8EAB942ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB8EAB952ED2153500B425A5 /* Debug */,
@@ -533,7 +541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB8EAB972ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMYTests" */ = {
+		AB8EAB972ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB8EAB982ED2153500B425A5 /* Debug */,
@@ -542,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB8EAB9A2ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMYUITests" */ = {
+		AB8EAB9A2ED2153500B425A5 /* Build configuration list for PBXNativeTarget "FindMyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB8EAB9B2ED2153500B425A5 /* Debug */,
