@@ -1,6 +1,6 @@
 # FUBLE — Find My Scooter
 
-An iOS app that uses **Bluetooth Low Energy (BLE)** to help you locate your scooter (Honda Activa). When your phone disconnects from the scooter's ESP32 device, it automatically saves your GPS location so you can navigate back to it.
+An iOS app that uses **Bluetooth Low Energy (BLE)** to help you locate your vehicle. When your phone disconnects from the scooter's ESP32 device, it automatically saves your GPS location so you can navigate back to it.
 
 ---
 
@@ -27,20 +27,73 @@ An iOS app that uses **Bluetooth Low Energy (BLE)** to help you locate your scoo
 
 ## Hardware Setup (ESP32)
 
-The app connects to an **ESP32** running a BLE GATT server. Flash your ESP32 with firmware that:
+The app connects to an **ESP32** running a BLE GATT server. The ready-to-flash firmware is included at [`ESP32_Firmware/fuble_ble.ino`](ESP32_Firmware/fuble_ble.ino).
 
-1. Advertises the service UUID: `4fafc201-1fb5-459e-8fcc-c5c9c331914b`
-2. Exposes a characteristic UUID: `beb5483e-36e1-4688-b7f5-ea07361b26a8`
-3. Sends JSON over that characteristic in this format:
+### Prerequisites
+
+| Tool | Where to get |
+|---|---|
+| Arduino IDE 2.x | [arduino.cc/en/software](https://www.arduino.cc/en/software) |
+| ESP32 board package | Add this URL in Arduino → Preferences → Additional Board URLs: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json` then install **esp32 by Espressif** via Boards Manager |
+| ArduinoJson library v6+ | Arduino IDE → Library Manager → search **ArduinoJson** by Benoit Blanchon |
+
+### Step 1 — Configure the firmware
+
+Open `ESP32_Firmware/fuble_ble.ino` and edit the two lines at the top of the file:
+
+```cpp
+// Replace with your vehicle name — must match kDeviceName in BLEManager.swift
+#define DEVICE_NAME "Your Vehicle Name"
+
+// A unique ID for your ESP32 — shown in the app's Device Info sheet
+#define DEVICE_ID   "YOUR-DEVICE-ID"
+```
+
+### Step 2 — Flash to ESP32
+
+1. Connect your ESP32 via USB
+2. In Arduino IDE select **Tools → Board → ESP32 Dev Module**
+3. Select the correct **Port** under Tools
+4. Click **Upload** (⌘U / Ctrl+U)
+5. Open **Serial Monitor** at `115200` baud — you should see:
+
+```
+[FUBLE] Starting up...
+[BLE] Advertising as: Your Vehicle Name
+```
+
+### Step 3 — Verify connection
+
+Once the firmware is running, open the iOS app on your iPhone. It will automatically scan for and connect to your ESP32. The proximity radar will activate as soon as a connection is established.
+
+### BLE identifiers
+
+The firmware and iOS app share these UUIDs — **do not change one without changing the other**:
+
+| Identifier | Value |
+|---|---|
+| Service UUID | `4fafc201-1fb5-459e-8fcc-c5c9c331914b` |
+| Characteristic UUID | `beb5483e-36e1-4688-b7f5-ea07361b26a8` |
+
+The characteristic sends JSON in this format, which the iOS app decodes:
 
 ```json
 {
-  "deviceId": "ACTIVA-5420",
+  "deviceId": "YOUR-DEVICE-ID",
   "location": "scooter"
 }
 ```
 
-> **Note:** The UUIDs above are the default pairing identifiers. If you change them on the ESP32 side, update `BLEManager.swift` lines 6–7 to match.
+### Performance tuning
+
+Two constants in the firmware control discovery speed and battery use:
+
+```cpp
+#define ADV_INTERVAL_MS    100   // Advertising interval — lower = faster iPhone discovery
+#define NOTIFY_INTERVAL_MS 500   // How often ESP32 pushes RSSI notify to iPhone
+```
+
+Increase `ADV_INTERVAL_MS` (e.g. to `500`) to reduce ESP32 power consumption at the cost of slightly slower initial discovery.
 
 ---
 
@@ -95,7 +148,14 @@ Example values:
 
 ## Customising Your Device Name
 
-The app is hardcoded to display **"Activa • 5420"**. To rename it, search for that string in `ContentView.swift` and replace it with your scooter's name.
+There is one place to change on each side:
+
+| File | What to change |
+|---|---|
+| `ESP32_Firmware/fuble_ble.ino` | `#define DEVICE_NAME` and `#define DEVICE_ID` |
+| `FindMY/BLEManager.swift` | `let kDeviceName` (line 8) |
+
+Both values must match for the iOS app to find and connect to your ESP32.
 
 ---
 
@@ -103,10 +163,12 @@ The app is hardcoded to display **"Activa • 5420"**. To rename it, search for 
 
 ```
 FindMY/
-├── FindMy/
+├── ESP32_Firmware/
+│   └── fuble_ble.ino          # ESP32 BLE firmware (flash this to your device)
+├── FindMY/
 │   ├── FUBLE.swift            # App entry point
 │   ├── ContentView.swift      # Main UI + parking logic
-│   ├── BLEManager.swift       # CoreBluetooth scanning & connection
+│   ├── BLEManager.swift       # CoreBluetooth scanning & connection (set kDeviceName here)
 │   ├── LocationManager.swift  # CoreLocation GPS tracking
 │   ├── ProximityModel.swift   # RSSI → proximity level mapping
 │   └── Assets.xcassets/       # App icon, scooter images
